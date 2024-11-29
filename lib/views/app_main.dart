@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:recipes_app/views/favorite.dart';
 import 'my_app_home_screen.dart';
 class AppMainScreen extends StatefulWidget {
   const AppMainScreen({super.key});
@@ -17,9 +18,10 @@ class _AppMainScreenState extends State<AppMainScreen> {
   void initState() {
     page = [
       const MyAppHomeScreen(),
-      navBarPage(Iconsax.heart5),
+      const Favorite(),
       navBarPage(Iconsax.calendar5),
       navBarPage(Iconsax.setting_21),
+      
       
     ];
     super.initState();

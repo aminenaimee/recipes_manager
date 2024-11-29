@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:recipes_app/views/details_screen.dart';
 
 import '../Provider/favorite_provider.dart';
 
 class FoodItemDisplayer extends StatefulWidget {
   final DocumentSnapshot<Object?> documentSnapshot;
+  
   const FoodItemDisplayer({super.key, required this.documentSnapshot});
 
   @override
@@ -17,7 +19,9 @@ class _FoodItemDisplayerState extends State<FoodItemDisplayer> {
   Widget build(BuildContext context) {
     final provider = FavoriteProvider.of(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context,MaterialPageRoute(builder: (context) => DetailsScreen(documentSnapshot: widget.documentSnapshot ),),);
+      },
       child: Container(
         margin: EdgeInsets.only(right: 10),
         width: 230,
