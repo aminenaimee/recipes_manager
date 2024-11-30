@@ -30,14 +30,17 @@ class _FoodItemDisplayerState extends State<FoodItemDisplayer> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: double.infinity,
-                  height: 160,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    image: DecorationImage(
-                      image: NetworkImage(widget.documentSnapshot['image']),
-                      fit: BoxFit.cover,
+                Hero(
+                  tag: widget.documentSnapshot['image'],
+                  child: Container(
+                    width: double.infinity,
+                    height: 160,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        image: NetworkImage(widget.documentSnapshot['image']),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
