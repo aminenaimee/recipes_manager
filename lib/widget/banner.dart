@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes_app/widget/recipe.dart';
 
 class BannerToExplore extends StatelessWidget {
   const BannerToExplore({super.key});
@@ -15,48 +16,54 @@ class BannerToExplore extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-              top: 32,
-              left: 20,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text("Cook the best\nrecipes at home",
-                      style: TextStyle(
-                        height: 1.1,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      )),
-                  const SizedBox(
-                    height: 10,
+            top: 32,
+            left: 20,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text("Cook the best\nrecipes at home",
+                    style: TextStyle(
+                      height: 1.1,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    )),
+                const SizedBox(
+                  height: 10,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 33,
+                    ),
+                    backgroundColor: Colors.white,
+                    elevation: 0,
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 33,
-                      ),
-                      backgroundColor: Colors.white,
-                      elevation: 0,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddRecipeScreen()),
+                    );
+                  },
+                  child: const Text(
+                    "Explore",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
-                    onPressed: () {},
-                    child: const Text(
-                      "Explore",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              ),
-              Positioned(
-                top: 0,
-                bottom: 0,
-                right: -20,
-                child: Image.network("https://pngimg.com/d/chef_PNG190.png") ,
+                  ),
                 )
+              ],
+            ),
+          ),
+          Positioned(
+            top: 0,
+            bottom: 0,
+            right: -20,
+            child: Image.network("https://pngimg.com/d/chef_PNG190.png"),
+          )
         ],
       ),
     );

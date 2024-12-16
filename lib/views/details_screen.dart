@@ -18,7 +18,7 @@ class DetailsScreen extends StatefulWidget {
 class _DetailsScreenState extends State<DetailsScreen> {
   @override
   void initState() {
-    List<double> baseAmounts = widget.documentSnapshot['ingrediantAmount']
+    List<double> baseAmounts = widget.documentSnapshot['ingredientAmount']
         .map<double>((amount) => double.parse(amount.toString()))
         .toList();
     Provider.of<QuantityProvider>(context, listen: false)
@@ -210,7 +210,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         children: [
                           Column(
                             children: widget
-                                .documentSnapshot["ingrediantsimage"]
+                                .documentSnapshot["ingredientImage"]
                                 .map<Widget>(
                                   (imageUrl) => Container(
                                     height: 60,
@@ -232,7 +232,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           SizedBox(width: 20),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: widget.documentSnapshot["ingrediantName"]
+                            children: widget.documentSnapshot["ingredientName"]
                                 .map<Widget>((ingrediant) => SizedBox(
                                       height: 70,
                                       child: Center(

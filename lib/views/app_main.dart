@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:recipes_app/views/favorite.dart';
 import 'my_app_home_screen.dart';
+
 class AppMainScreen extends StatefulWidget {
   const AppMainScreen({super.key});
 
@@ -21,11 +21,10 @@ class _AppMainScreenState extends State<AppMainScreen> {
       const Favorite(),
       navBarPage(Iconsax.calendar5),
       navBarPage(Iconsax.setting_21),
-      
-      
     ];
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,19 +34,17 @@ class _AppMainScreenState extends State<AppMainScreen> {
         elevation: 0,
         iconSize: 28,
         currentIndex: selectedIndex,
-        selectedItemColor:const Color(0xff568A9F),
+        selectedItemColor: const Color(0xff568A9F),
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
         selectedLabelStyle: const TextStyle(
           color: Color(0xff568A9F),
-        
           fontWeight: FontWeight.w600,
         ),
         unselectedLabelStyle: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w500,
         ),
-
         onTap: (value) {
           selectedIndex = value;
           setState(() {
@@ -56,39 +53,38 @@ class _AppMainScreenState extends State<AppMainScreen> {
         },
         items: [
           BottomNavigationBarItem(
-          
             icon: Icon(
               selectedIndex == 0 ? Iconsax.home5 : Iconsax.home_1,
             ),
             label: "Home",
           ),
-            BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
-              selectedIndex ==1 ? Iconsax.heart5 : Iconsax.heart,
+              selectedIndex == 1 ? Iconsax.heart5 : Iconsax.heart,
             ),
             label: "Favorite",
           ),
-            BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
-             selectedIndex == 2 ? Iconsax.calendar5 : Iconsax.calendar,
+              selectedIndex == 2 ? Iconsax.calendar5 : Iconsax.calendar,
             ),
             label: "Meal Plan",
           ),
-            BottomNavigationBarItem(
+          BottomNavigationBarItem(
             icon: Icon(
-             selectedIndex ==3 ? Iconsax.setting_21 : Iconsax.setting_2,
+              selectedIndex == 3 ? Iconsax.setting_21 : Iconsax.setting_2,
             ),
             label: "Settings",
           ),
-          
         ],
       ),
       body: page[selectedIndex],
     );
   }
+
   navBarPage(iconName) {
     return Center(
-      child: Icon(iconName,size: 100,color:const Color(0xff568A9F) ),
+      child: Icon(iconName, size: 100, color: const Color(0xff568A9F)),
     );
   }
 }
