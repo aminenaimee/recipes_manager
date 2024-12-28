@@ -47,7 +47,7 @@ class BannerToExplore extends StatelessWidget {
                     );
                   },
                   child: const Text(
-                    "Explore",
+                    "Add Recipe",
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
